@@ -21,26 +21,14 @@ const displayGrid = () => {
 // Add event listenners
 // / Get input from keyboard to play
 // <element>.AddEventListener(<eventName: String> , CallBack:Function(event));
-document.addEventListener("keyup", ({ keyCode }) => {
-  console.log(keyCode);
-  if (keyCode >= 97 && keyCode <= 103) {
-  console.log("good key");
-    const colIndex = keyCode - 97;
-    putTokenInGrid ({ colIndex, color: currentColor });
-  }
-});
-// / // Put token in grid
-const putTokenInGrid = ({ colIndex, color }) => {
-  for (let i = grid.length - 1; i >= 0; i--) {
-    if (grid[i][colIndex] === null) {
-      grid[i][colIndex] = color;
-      break;
-    }
-  }
-
-  toggleColor();
-  displayGrid();
-};
-// Ckeck win
+document.addEventListener("keyup", onKeyUp);
 // Option: Ckeck draw
 // Option: Add IA
+
+const init = () => {
+  addEventListeners();
+};
+
+const addEventListener = () => {};
+
+window.addEventListener("load", init);
