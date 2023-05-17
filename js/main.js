@@ -1,8 +1,11 @@
 // Define HTML elements
 // Set up player & color
 
+let canvasEl = null;
+let ctx = null;
 let currentColor = "R";
-const grid = [
+let isPlaying = true;
+const defaultGrid = [
   [null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null],
@@ -10,25 +13,36 @@ const grid = [
   [null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null],
 ];
+let grid = [...defaultGrid];
 // Change color every round
 const toggleColor = () => {
   currentColor = currentColor === "R" ? "Y" : "R";
 };
-// Display grid
-const displayGrid = () => {
-  console.table(grid);
-};
-// Add event listenners
-// / Get input from keyboard to play
-// <element>.AddEventListener(<eventName: String> , CallBack:Function(event));
-document.addEventListener("keyup", onKeyUp);
+
 // Option: Ckeck draw
 // Option: Add IA
 
 const init = () => {
+  attachFromDOM();
   addEventListeners();
+
+  drawBoard();
+  displayGrid();
+  // checkWin({ grid, color: "Y" });
+  // ctx.translate(50, 50);
 };
 
-const addEventListener = () => {};
+const attachFromDOM = () => {
+  canvasEl = document.querySelector("#canvas");
+  ctx = canvasEl.getContext("2d");
+};
+
+const addEventListeners = () => {
+  // Add event listenners
+  // / Get input from keyboard to play
+  // <element>.AddEventListener(<eventName: String> , CallBack:Function(event));
+  console.log("#addEventListeners");
+  document.addEventListener("keyup", onKeyUp);
+};
 
 window.addEventListener("load", init);

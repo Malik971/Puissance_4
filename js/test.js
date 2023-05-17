@@ -40,6 +40,14 @@ const gridNumbered = [
     ["x0;y4", "x1;y4", "x2;y4", "R", "x4;y4", "x5;y4", "x6;y4"],
     ["x0;y5", "x1;y5", "R", "x3;y5", "x4;y5", "x5;y5", "x6;y5"],
   ];
+  const gridNumbered6 = [
+    ["R", "x1;y0", "x2;y0", "x3;y0", "x4;y0", "x5;y0", "x6;y0"],
+    ["Y", "x1;y1", "x2;y1", "x3;y1", "x4;y1", "x5;y1", "x6;y1"],
+    ["R", "x1;y2", "x2;y2", "x3;y2", "x4;y2", "x5;y2", "x6;y2"],
+    ["Y", "x1;y3", "x2;y3", "x3;y3", "x4;y3", "x5;y3", "x6;y3"],
+    ["x0;y4", "x1;y4", "x2;y4", "x3;y4", "x4;y4", "x5;y4", "x6;y4"],
+    ["x0;y5", "x1;y5", "x2;y5", "x3;y5", "x4;y5", "x5;y5", "x6;y5"],
+  ];
   
   const obj = {
     grid: gridNumbered,
@@ -53,6 +61,10 @@ const gridNumbered = [
     grid: gridNumbered3,
     color: "R",
   };
+  const obj4 = {
+    grid: gridNumbered6,
+    color: "R",
+  };
   const isTestWin1 = checkVertical(obj);
   const isTestWin2 = checkVertical(obj2);
   console.log(false === isTestWin1);
@@ -61,3 +73,6 @@ const gridNumbered = [
   const isTestWin4 = checkVertical(obj2);
   console.log(false === isTestWin3);
   console.log(true === isTestWin4);
+
+  const isTestWin6 = checkVertical(obj4);
+  console.log(false === isTestWin6);

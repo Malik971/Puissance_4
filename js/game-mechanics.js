@@ -7,9 +7,6 @@ const putTokenInGrid = ({ colIndex, color }) => {
       }
     }
   
-    ckeckWin({ grid, color });
-  
-    toggleColor();
-    displayGrid();
+    
   };
   
